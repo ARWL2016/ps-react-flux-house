@@ -1,33 +1,33 @@
+// VIEW 
+// RENDERED FROM MANAGE-AUTHOR-PAGE 
+// RENDERS INPUT  
+
 "use strict";
 
 var React = require('react'); 
+var Input = require('../common/textInput');
 
 var AuthorForm = React.createClass({
     render: function() {
         return (
             <form>
                 <h1>Manage Author</h1>
-                <label htmlFor="firstName">First Name</label>
-                <input type="text"
+                <Input
                     name="firstName"
-                    className="form-control"
-                    placeholder="First Name"
-                    ref="firstName"
-                    onChange={this.props.onChange}
-                    value={this.props.author.firstName} /> 
+                    label="First Name"
+                    value={this.props.author.firstName}
+                    onChange={this.props.onChange} /> 
                 <br /> 
 
-                <label htmlFor="lastName">First Name</label>
-                <input type="text"
+ 
+                <Input
                     name="lastName"
-                    className="form-control"
-                    placeholder="Last Name"
-                    ref="lastName"
-                    onChange={this.props.onChange}
-                    value={this.props.author.lastName} /> 
+                    label="Last Name"
+                    value={this.props.author.lastName} 
+                    onChange={this.props.onChange} /> 
                 <br /> 
 
-                <input type="submit" value="Save" className="btn btn-default" /> 
+                <input type="submit" value="Save" className="btn btn-default" onClick={this.props.onSave} /> 
                
             </form> 
             

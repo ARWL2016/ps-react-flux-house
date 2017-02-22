@@ -1,3 +1,6 @@
+//DISPLAY 
+//RENDERED FROM AUTHORPAGE 
+
 "use strict";
 
 var React = require('react'); 

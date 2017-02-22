@@ -1,3 +1,6 @@
+// CONTROLLER 
+// RENDERS AUTHORLIST 
+
 "use strict";
 
 var React = require('react'); 
