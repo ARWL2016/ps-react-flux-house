@@ -6,9 +6,10 @@
 var React = require('react'); 
 var Router = require('react-router'); 
 var AuthorForm = require('./authorForm'); 
-var AuthorApi = require('../../api/authorApi'); 
+var AuthorActions = require('../../actions/authorActions'); //flux
+var AuthorStore = require('../../stores/authorStore'); //flux
 var toastr = require('toastr'); 
-toastr.options.positionClass = "toast-bottom-left"; 
+// toastr.options.positionClass = "toast-bottom-left"; 
 
 var ManageAuthorPage = React.createClass({
     mixins: [
@@ -34,7 +35,7 @@ var ManageAuthorPage = React.createClass({
         var authorId = this.props.params.id; //from the path '/author:ID'
 
         if (authorId) {
-            this.setState({author: AuthorApi.getAuthorById(authorId)});
+            this.setState({author: AuthorStore.getAuthorById(authorId)});
         }
     },
 
@@ -71,7 +72,11 @@ var ManageAuthorPage = React.createClass({
             return; 
         }
 
-        AuthorApi.saveAuthor(this.state.author); 
+        if (this.state.author.id) {
+            AuthorActions.updateAuthor(this.state.author); 
+        } else {
+            AuthorActions.createAuthor(this.state.author);
+        }
         this.setState({dirty: false});
         toastr.success('Author saved.'); 
         this.transitionTo('authors'); //requires mixin line 12
@@ -84,8 +89,7 @@ var ManageAuthorPage = React.createClass({
                     author={this.state.author} 
                     onChange={this.setAuthorState}
                     onSave={this.saveAuthor}
-                    errors={this.state.errors}
-                    /> 
+                    errors={this.state.errors} /> 
             </div> 
         );
     }
