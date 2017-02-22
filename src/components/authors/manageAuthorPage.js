@@ -29,6 +29,14 @@ var ManageAuthorPage = React.createClass({
             dirty: false
       }; 
     },
+    //cWM prevents rerender on state change (updates before rendering)
+    componentWillMount: function() {
+        var authorId = this.props.params.id; //from the path '/author:ID'
+
+        if (authorId) {
+            this.setState({author: AuthorApi.getAuthorById(authorId)});
+        }
+    },
 
     setAuthorState: function(event) {
         this.setState({dirty: true});
