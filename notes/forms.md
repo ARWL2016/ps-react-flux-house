@@ -4,3 +4,8 @@
 3. On the UI, we use the `onChange` attribute to reference a function that passes data to the controller  
 4. In the controller, the form data is represented by an object. We use `setInitialState` to declare that object. We then create a setState function to update the object.  
 5. The setState function is then passed to the view as a prop  
+
+####Toastr 
+1. This is a very simple library to show notifications  
+2. Wire up the css (in the gulpfile) and the jquery (by required toastr)
+3. Call toastr.success() in the appropriate place.  

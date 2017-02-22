@@ -16,3 +16,4 @@ https://github.com/coryhouse/react-flux-starter-kit
 - Browserify  
 - ESLint  
 - Bootstrap (dep. jQuery)  
+- Toastr - simple notifications http://codeseven.github.io/toastr/demo.html 
