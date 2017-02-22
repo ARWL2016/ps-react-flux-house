@@ -10,7 +10,7 @@ https://github.com/coryhouse/react-flux-starter-kit
 
 ###Tech
 - React   
-- React-router https://github.com/ReactTraining/react-router/tree/master/docs  
+- React-router https://github.com/ReactTraining/react-router/tree/master/docs 
 - Flux  
 - Gulp  
 - Browserify  
