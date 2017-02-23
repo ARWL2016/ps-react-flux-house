@@ -3,20 +3,20 @@
 var React = require('react'); 
 
 var About = React.createClass({
-    // statics: {
-    //     willTransitionTo: function(transition, params, query, callback) {
-    //         if (!confirm("Statics asks: View this page?")) {
-    //             transition.about(); 
-    //         } else {
-    //             callback(); 
-    //         }
-    //     },
-    //     willTransitionFrom: function(transition, component) {
-    //         if (!confirm("Statics asks: Leave this page?")) {
-    //             transition.about(); 
-    //         } 
-    //     }
-    // },
+    statics: {
+        willTransitionTo: function(transition, params, query, callback) {
+            if (!confirm("Statics asks: View this page?")) {
+                transition.about(); 
+            } else {
+                callback(); 
+            }
+        },
+        willTransitionFrom: function(transition, component) {
+            if (!confirm("Statics asks: Leave this page?")) {
+                transition.about(); 
+            } 
+        }
+    },
     
     render: function() {
         return (
