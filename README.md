@@ -8,7 +8,10 @@ https://app.pluralsight.com/library/courses/react-flux-building-applications/tab
 https://github.com/ARWL2016/ps-react-flux-house   
 https://github.com/coryhouse/react-flux-starter-kit   
 
-Branches: noflux stores the application state before flux is added  
+####Branches: 
+- noflux stores the application state before flux is added   
+- courses stores the app after the final exercise  
+- master stores the course demo app in full   
 
 ###Tech
 - React   
